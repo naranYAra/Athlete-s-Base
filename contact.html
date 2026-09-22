@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>お問い合わせ | Athlete's Base</title>
+    <meta name="description" content="アマチュア選手からプロ選手までアスリートに特化した専門医がサポートします。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header_inner">
+            <p class="header_logo"><a href="/">Athlete's Base</a></p>
+
+            <nav class="header_nav">
+                <button type="button" class="header_nav_close" aria-label="メニューを閉じる">×</button>
+
+                <ul class="header_nav_list">
+                    <li><a href="/">TOP</a></li>
+                    <li><a href="/hospital.html">病院紹介</a></li>
+                    <li><a href="/blog_list.html">ブログ</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
+                </ul>
+
+                <div class="header_nav_contact">
+                    <p class="header_nav_contact_label">お電話でのお問い合わせ</p>
+                    <p class="header_nav_tel">03-XXXX-XXXX</p>
+                </div>
+            </nav>
+
+            <button type="button" class="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mask"></div>
+    </header>
+
+    <section class="mainvisual-contact">
+        <div class="mainvisual-contact_inner">
+            <span class="mainvisual_badge">CONTACT</span>
+            <h1 class="mainvisual_title">お問い合わせ</h1>
+            <p class="mainvisual_text">
+                痛みの相談からパフォーマンス向上まで、専門スタッフが親身に対応いたします。<br>まずはお気軽にご相談ください。
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="wrapper contact" id="contact">
+            <aside class="contact_aside">
+                <div class="contact_aside_card">
+                    <h2 class="contact_aside_card_title">お電話でのご予約・相談</h2>
+                    <p class="contact_aside_tel">
+                        <img class="contact_aside_tel_icon" src="/img/tel.svg" alt="">
+                        03-XXXX-XXXX
+                    </p>
+                    <p class="contact_aside_label">診療時間</p>
+                    <table class="contact_aside_table">
+                        <tr>
+                            <th>平日</th>
+                            <td>9:00 - 20:00</td>
+                        </tr>
+                        <tr>
+                            <th>土曜日</th>
+                            <td>9:00 - 17:00</td>
+                        </tr>
+                        <tr>
+                            <th>日・祝</th>
+                            <td>休診</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="contact_aside_card">
+                    <h2 class="contact_aside_card_title">よくあるご質問</h2>
+                    <p class="contact_aside_faq_text">
+                        予約なしでも受診可能ですか？健康保険は使えますか？など、多くの質問をまとめています。
+                    </p>
+                    <a href="#" class="contact_aside_faq_link">FAQを見る<span aria-hidden="true">→</span></a>
+                </div>
+            </aside>
+
+            <form class="contact_form" action="#" method="post">
+                <h2 class="contact_form_title">お問い合わせ</h2>
+                <label class="contact_form_label" for="name">予約内容 </label>
+                <div class="contact_form_tabs" role="tablist">
+                    <button type="button" class="contact_form_tab is-active" data-tab="reserve">ご予約について</button>
+                    <button type="button" class="contact_form_tab" data-tab="symptom">症状のご相談</button>
+                    <button type="button" class="contact_form_tab" data-tab="other">その他</button>
+                </div>
+                <input type="hidden" name="contact_type" id="contact_type" value="reserve">
+
+                <div class="contact_form_grid">
+                    <div class="contact_form_field">
+                        <label class="contact_form_label" for="name">お名前 <span
+                                class="contact_form_required">必須</span></label>
+                        <input class="contact_form_input" type="text" id="name" name="name" placeholder="アスリート 太郎"
+                            required>
+                    </div>
+                    <div class="contact_form_field">
+                        <label class="contact_form_label" for="email">メールアドレス <span
+                                class="contact_form_required">必須</span></label>
+                        <input class="contact_form_input" type="email" id="email" name="email"
+                            placeholder="example@athletesbase.com" required>
+                    </div>
+                </div>
+
+                <div class="contact_form_field">
+                    <label class="contact_form_label" for="tel">電話番号 <span
+                            class="contact_form_required">必須</span></label>
+                    <input class="contact_form_input" type="tel" id="tel" name="tel" placeholder="09012345678" required>
+                </div>
+
+                <!-- ご予約について：可変パネル -->
+                <div class="contact_form_panel is-active" data-panel="reserve">
+                    <div class="contact_form_field">
+                        <label class="contact_form_label">来院区分 <span class="contact_form_required">必須</span></label>
+                        <div class="contact_form_radio_group">
+                            <label class="contact_form_radio">
+                                <input type="radio" name="visit_type" value="first" checked>
+                                初めて
+                            </label>
+                            <label class="contact_form_radio">
+                                <input type="radio" name="visit_type" value="repeat">
+                                2回目以降
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="contact_form_field">
+                        <label class="contact_form_label" for="menu">
+                            ご希望メニュー
+                            <span class="contact_form_required">必須</span>
+                        </label>
+                        <select class="contact_form_select" id="menu" name="menu">
+                            <option value="">選択してください</option>
+                            <option value="counseling">初診カウンセリング</option>
+                            <option value="treatment">施術のみ</option>
+                            <option value="training">トレーニング相談</option>
+                        </select>
+                    </div>
+
+                    <div class="contact_form_grid">
+                        <div class="contact_form_field">
+                            <label class="contact_form_label" for="date1">
+                                ご希望日時(第一希望)
+                                <span class="contact_form_required">必須</span>
+                            </label>
+                            <div class="contact_form_date_group">
+                                <input class="contact_form_input" type="date" id="date1" name="date1">
+                                <select class="contact_form_select" name="time1">
+                                    <option value="am">午前</option>
+                                    <option value="pm">午後</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="contact_form_field">
+                            <label class="contact_form_label" for="date2">
+                                ご希望日時(第二希望)
+                                <span class="contact_form_optional">任意</span>
+                            </label>
+                            <div class="contact_form_date_group">
+                                <input class="contact_form_input" type="date" id="date2" name="date2">
+                                <select class="contact_form_select" name="time2">
+                                    <option value="am">午前</option>
+                                    <option value="pm">午後</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 症状のご相談：可変パネル -->
+                <div class="contact_form_panel" data-panel="symptom">
+                    <div class="contact_form_field">
+                        <label class="contact_form_label">症状のある部位 <span class="contact_form_required">必須</span></label>
+                        <div class="contact_form_chip_group">
+                            <button type="button" class="contact_form_chip" data-chip>肩</button>
+                            <button type="button" class="contact_form_chip" data-chip>肘</button>
+                            <button type="button" class="contact_form_chip" data-chip>腰</button>
+                            <button type="button" class="contact_form_chip" data-chip>膝</button>
+                            <button type="button" class="contact_form_chip" data-chip>足首</button>
+                            <button type="button" class="contact_form_chip" data-chip>その他</button>
+                        </div>
+                        <input type="hidden" name="symptom_parts" id="symptom_parts">
+                    </div>
+
+                    <div class="contact_form_grid">
+                        <div class="contact_form_field">
+                            <label class="contact_form_label" for="onset">受傷(発症)時期 <span
+                                    class="contact_form_required">必須</span></label>
+                            <select class="contact_form_select" id="onset" name="onset">
+                                <option value="">選択してください</option>
+                                <option value="today">今日</option>
+                                <option value="week">今週</option>
+                                <option value="month">1ヶ月以内</option>
+                                <option value="before">それ以前</option>
+                            </select>
+                        </div>
+                        <div class="contact_form_field">
+                            <label class="contact_form_label">受傷状況</label>
+                            <div class="contact_form_radio_group">
+                                <label class="contact_form_radio">
+                                    <input type="radio" name="cause" value="game" checked>
+                                    競技中
+                                </label>
+                                <label class="contact_form_radio">
+                                    <input type="radio" name="cause" value="daily">
+                                    日常生活
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact_form_field">
+                        <label class="contact_form_label">通院・治療歴</label>
+                        <div class="contact_form_checkbox_group">
+                            <label class="contact_form_checkbox">
+                                <input type="checkbox" name="history" value="hospital">
+                                他院通院中
+                            </label>
+                            <label class="contact_form_checkbox">
+                                <input type="checkbox" name="history" value="surgery">
+                                手術歴あり
+                            </label>
+                            <label class="contact_form_checkbox">
+                                <input type="checkbox" name="history" value="none">
+                                特になし
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="contact_form_field">
+                        <label class="contact_form_label" for="sport">競技種目 <span
+                                class="contact_form_optional">任意</span></label>
+                        <input class="contact_form_input" type="text" id="sport" name="sport" placeholder="野球、ランニング等">
+                    </div>
+                </div>
+
+                <!-- その他：可変パネル -->
+                <div class="contact_form_panel" data-panel="other">
+                    <div class="contact_form_field">
+                        <label class="contact_form_label" for="sport_other">競技種目 <span
+                                class="contact_form_optional">任意</span></label>
+                        <input class="contact_form_input" type="text" id="sport_other" name="sport_other"
+                            placeholder="野球、ランニング等">
+                    </div>
+                </div>
+
+                <div class="contact_form_field">
+                    <label class="contact_form_label" for="message">
+                        お問い合わせ内容
+                        <span class="contact_form_required" data-message-required>必須</span>
+                        <span class="contact_form_optional" data-message-optional hidden>任意</span>
+                    </label>
+                    <textarea class="contact_form_textarea" id="message" name="message" rows="5"
+                        placeholder="症状やご希望の予約日時などをご記入ください。"></textarea>
+                </div>
+
+                <label class="contact_form_agree">
+                    <input type="checkbox" name="agree" required>
+                    <a href="#">プライバシーポリシー</a>に同意の上、送信してください。お客様の情報は厳重に管理されます。
+                </label>
+
+                <button type="submit" class="btn btn-primary contact_form_submit">
+                    内容を確認して送信する　 <span aria-hidden="true">▷</span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_inner wrapper">
+            <a href="#">
+                <p class="footer_logo">Athlete's Base</p>
+            </a>
+            <small class="footer_copyright">© Athlete's Base All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

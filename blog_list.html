@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>ブログ | Athlete's Base</title>
+    <meta name="description" content="アマチュア選手からプロ選手までアスリートに特化した専門医がサポートします。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header_inner">
+            <p class="header_logo"><a href="/">Athlete's Base</a></p>
+
+            <nav class="header_nav">
+                <button type="button" class="header_nav_close" aria-label="メニューを閉じる">×</button>
+
+                <ul class="header_nav_list">
+                    <li><a href="/">TOP</a></li>
+                    <li><a href="/hospital.html">病院紹介</a></li>
+                    <li><a href="/blog_list.html">ブログ</a></li>
+                    <li><a href="/contact.html">お問い合わせ</a></li>
+                </ul>
+
+                <div class="header_nav_contact">
+                    <p class="header_nav_contact_label">お電話でのお問い合わせ</p>
+                    <p class="header_nav_tel">03-XXXX-XXXX</p>
+                </div>
+            </nav>
+
+            <button type="button" class="hamburger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mask"></div>
+    </header>
+
+    <main>
+        <section class="wrapper blog-heading">
+            <h1 class="blog-heading_title">ブログ</h1>
+            <p class="blog-heading_lead">スポーツ障害の予防やコンディショニングに関する情報をお届けします</p>
+        </section>
+
+        <section class="bg-gray blog-list-section">
+            <div class="wrapper">
+                <ul class="blog-list">
+                    <li class="blog-list_item">
+                        <a href="/blog.html" class="blog-list_link">
+                            <img class="blog-list_image" src="/img/blog1.jpg" alt="">
+                            <article class="blog-list_body">
+                                <div class="blog-list_meta">
+                                    <span class="blog-list_tag">コンディショニング</span>
+                                    <span class="blog-list_date">2024.11.20</span>
+                                </div>
+                                <h2 class="blog-list_title">アスリートが意識すべき食事のポイント</h2>
+                                <p class="blog-list_excerpt">
+                                    パフォーマンス向上と怪我予防のために欠かせない食事のポイントを、栄養バランスの考え方から具体的な食材選びまで分かりやすく解説します。
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="blog-list_item">
+                        <a href="/blog.html" class="blog-list_link">
+                            <img class="blog-list_image" src="/img/blog2.jpg" alt="">
+                            <article class="blog-list_body">
+                                <div class="blog-list_meta">
+                                    <span class="blog-list_tag">セルフケア</span>
+                                    <span class="blog-list_date">2024.11.15</span>
+                                </div>
+                                <h2 class="blog-list_title">冬の怪我を防ぐ！朝のストレッチ習慣</h2>
+                                <p class="blog-list_excerpt">
+                                    気温が下がる冬場は筋肉が硬くなり怪我のリスクが高まります。毎朝の習慣にしたい簡単なストレッチメニューをご紹介します。
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                    <li class="blog-list_item">
+                        <a href="/blog.html" class="blog-list_link">
+                            <img class="blog-list_image" src="/img/blog3.jpg" alt="">
+                            <article class="blog-list_body">
+                                <div class="blog-list_meta">
+                                    <span class="blog-list_tag">院内設備</span>
+                                    <span class="blog-list_date">2024.11.10</span>
+                                </div>
+                                <h2 class="blog-list_title">当院で導入している最新機器のご紹介</h2>
+                                <p class="blog-list_excerpt">
+                                    動作解析システムをはじめ、当院が導入しているリハビリ・トレーニング機器の特徴と、それぞれの活用シーンをご紹介します。
+                                </p>
+                            </article>
+                        </a>
+                    </li>
+                </ul>
+
+                <nav class="blog-list_pagination" aria-label="ページネーション">
+                    <a href="#" class="blog-list_pagination_arrow" aria-label="前へ">‹</a>
+                    <a href="#" class="blog-list_pagination_item is-current">1</a>
+                    <a href="#" class="blog-list_pagination_arrow" aria-label="次へ">›</a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_inner wrapper">
+            <a href="#">
+                <p class="footer_logo">Athlete's Base</p>
+            </a>
+            <small class="footer_copyright">© Athlete's Base All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

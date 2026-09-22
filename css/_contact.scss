@@ -1,0 +1,320 @@
+@use "mixin" as m;
+
+// お問い合わせ：メインビジュアル背景差し替え
+// mainvisual：お問い合わせページ用背景
+.mainvisual-contact {
+    position: relative;
+    background-image:
+        linear-gradient(90deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0) 100%),
+        url('/img/mainvisual_contact.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+    &_inner {
+        position: absolute;
+        top: 50%;
+        left: 9%;
+        z-index: 10;
+
+        @include m.sp {
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
+// お問い合わせページ：レイアウト
+.contact {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding-top: 140px; // headerがposition:fixedのため
+    padding-bottom: 100px;
+
+    @include m.sp {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    // サイドバー
+    &_aside {
+        width: 300px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include m.sp {
+            width: 100%;
+        }
+
+        &_card {
+            padding: 24px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+            &_title {
+                margin-bottom: 16px;
+                font-size: 15px;
+                font-weight: 700;
+                color: #1B1C1C;
+            }
+        }
+    }
+
+    &_aside_tel {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #A43C28;
+
+        &_icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &_aside_label {
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: #57423E;
+    }
+
+    &_aside_table {
+        width: 100%;
+        font-size: 13px;
+        color: #57423E;
+
+        th {
+            padding-block: 4px;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        td {
+            text-align: right;
+            font-weight: 700;
+        }
+    }
+
+    &_aside_faq_text {
+        margin-bottom: 12px;
+        font-size: 13px;
+        line-height: 1.8;
+        color: #57423E;
+    }
+
+    &_aside_faq_link {
+        font-size: 13px;
+        font-weight: 700;
+        color: #A43C28;
+    }
+
+    // フォーム
+    &_form {
+        flex: 1;
+        padding: 32px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        @include m.sp {
+            width: 100%;
+            padding: 20px;
+        }
+
+        &_title {
+            margin-bottom: 26px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1B1C1C;
+        }
+
+        // タブ
+        &_tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+
+            @include m.sp {
+                // flex-direction: column;
+            }
+        }
+
+        &_tab {
+            flex: 1;
+            padding: 12px 8px;
+            border-radius: 8px;
+            border: 1px solid #E5E1DF;
+            background-color: #ffffff;
+            color: #57423E;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+
+            &.is-active {
+                background-color: #FBE4DE;
+                border-color: #A43C28;
+                color: #A43C28;
+            }
+        }
+
+        &_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+
+            @include m.sp {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &_field {
+            margin-bottom: 20px;
+        }
+
+        &_label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #1B1C1C;
+        }
+
+        &_required {
+            padding: 2px 8px;
+            margin-left: 4px;
+            border-radius: 4px;
+            background-color: #A43C28;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        &_optional {
+            padding: 2px 8px;
+            margin-left: 4px;
+            border-radius: 4px;
+            background-color: #E5E1DF;
+            color: #57423E;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        &_input,
+        &_select,
+        &_textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #E5E1DF;
+            border-radius: 8px;
+            background-color: #FBF9F8;
+            font-size: 14px;
+            font-family: inherit;
+            color: #1B1C1C;
+
+            &:focus {
+                outline: none;
+                border-color: #A43C28;
+            }
+        }
+
+        &_textarea {
+            resize: vertical;
+        }
+
+        &_date_group {
+            display: flex;
+            gap: 8px;
+
+            input {
+                flex: 1;
+            }
+
+            select {
+                width: 100px;
+            }
+        }
+
+        &_radio_group,
+        &_checkbox_group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 8px;
+        }
+
+        &_radio,
+        &_checkbox {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #1B1C1C;
+            cursor: pointer;
+        }
+
+        &_chip_group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 8px;
+        }
+
+        &_chip {
+            padding: 8px 18px;
+            border-radius: 999px;
+            border: 1px solid #E5E1DF;
+            background-color: #ffffff;
+            color: #57423E;
+            font-size: 13px;
+            cursor: pointer;
+
+            &.is-active {
+                background-color: #A43C28;
+                border-color: #A43C28;
+                color: #ffffff;
+            }
+        }
+
+        &_panel {
+            display: none;
+
+            &.is-active {
+                display: block;
+            }
+        }
+
+        &_agree {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #57423E;
+
+            input {
+                margin-top: 3px;
+            }
+
+            a {
+                color: #A43C28;
+                text-decoration: underline;
+            }
+        }
+
+        &_submit {
+            width: 100%;
+        }
+    }
+}

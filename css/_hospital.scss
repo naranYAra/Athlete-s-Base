@@ -1,0 +1,259 @@
+@use "mixin" as m;
+
+// mainvisual：病院紹介ページ用背景
+.mainvisual-hospital {
+    background-image:
+        linear-gradient(90deg, rgba(26, 26, 26, 0.6) 0%, rgba(26, 26, 26, 0) 100%),
+        url('/img/mainvisual_hospital.jpg');
+}
+
+// 私たちのミッション
+.mission {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding-block: 100px;
+
+    @include m.sp {
+        flex-direction: column;
+        gap: 32px;
+        padding-block: 48px;
+    }
+
+    &_text {
+        flex: 1;
+    }
+
+    &_label {
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #4E5E82;
+    }
+
+    &_title {
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #A43C28;
+    }
+
+    &_body {
+        margin-bottom: 16px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.9;
+        color: #57423E;
+    }
+
+    &_gallery {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+        height: 400px;
+
+        @include m.sp {
+            height: 300px;
+            grid-template-columns: 1fr; // 追加
+            grid-template-rows: 1fr;
+        }
+
+        &_image {
+            width: 100%;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            object-fit: cover;
+            border-radius: 24px;
+
+            &-main {
+                grid-row: 1;
+                grid-column: 1;
+
+                @include m.sp {
+                    display: none;
+                }
+            }
+
+            &-sub1 {
+                grid-row: 2;
+                grid-column: 1;
+
+                @include m.sp {
+                    display: none;
+                }
+            }
+
+            &-sub2 {
+                grid-row: 1 / 3;
+                grid-column: 2;
+                height: calc(100% - 96px); // 上下24px分(合計48px)を差し引く
+                margin-block: 48px;
+
+                @include m.sp {
+                    grid-row: 1;
+                    grid-column: 1;
+                    height: 100%;
+                    margin-block: 0;
+                }
+            }
+        }
+    }
+}
+
+// 施設・設備紹介
+.facility {
+    padding-block: 100px;
+
+    @include m.sp {
+        padding-block: 50px;
+    }
+
+    &_lead {
+        margin-top: 16px;
+        text-align: center;
+        font-size: 14px;
+        color: #57423E;
+    }
+
+    &_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-top: 48px;
+        list-style: none;
+
+        @include m.sp {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &_card {
+        &_image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        &_title {
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1B1C1C;
+        }
+
+        &_text {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #57423E;
+        }
+    }
+}
+
+// アクセス・診療時間
+.access {
+    display: flex;
+    gap: 0;
+    padding-block: 100px;
+
+    @include m.sp {
+        flex-direction: column;
+        padding-block: 48px;
+    }
+
+    &_map {
+        flex: 1;
+
+        &_image {
+            display: block; // 追加：iframeはデフォルトinlineのため
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            border: 0; // 追加：iframeのデフォルト枠線を消す
+            border-radius: 16px 0 0 16px;
+
+            @include m.sp {
+                border-radius: 16px 16px 0 0;
+            }
+        }
+    }
+
+    &_info {
+        flex: 1;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 0 16px 16px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+        @include m.sp {
+            border-radius: 0 0 16px 16px;
+        }
+
+        &_title {
+            margin-bottom: 24px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #4E5E82;
+        }
+
+        &_item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        &_icon {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        &_label {
+            margin-bottom: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #4E5E82;
+        }
+
+        &_text {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #57423E;
+        }
+
+        &_table {
+            font-size: 13px;
+            color: #57423E;
+            font-weight: 400;
+
+            th {
+                padding-right: 16px;
+                text-align: left;
+            }
+
+            td {
+                font-weight: 700;
+            }
+        }
+
+        &_tel {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4E5E82;
+        }
+
+        &_btn {
+            width: 100%;
+            margin-top: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    }
+}

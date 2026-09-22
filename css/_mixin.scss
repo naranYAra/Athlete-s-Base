@@ -1,0 +1,21 @@
+$sma: 700px;
+$sp: 800px;
+$tab: 1100px;
+
+@mixin sp {
+    @media (max-width: $sp) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
+@mixin smart {
+    @media (max-width: $sma) {
+        @content;
+    }
+}

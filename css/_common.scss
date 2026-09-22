@@ -1,0 +1,203 @@
+@use "mixin" as m;
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Poppins", "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo",
+        sans-serif;
+    background-color: #FBF9F8;
+    color: #000000;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding-block: 60px;
+
+    @include m.sp {
+        padding-block: 30px;
+    }
+}
+
+.wrapper {
+    max-width: 1200px;
+    padding-inline: 40px;
+    margin-inline: auto;
+}
+
+.bg-gray {
+    background-color: #F5F3F3;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #FF7F66;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+}
+
+//mainvisual共通
+.mainvisual {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include m.sp {
+        background-position: 75% center;
+    }
+
+    &_inner {
+        position: absolute;
+        top: 350px;
+        left: 9%;
+        z-index: 10;
+
+        @include m.sp {
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    &_badge {
+        margin-bottom: 10px;
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: #731808;
+        background-color: #FF7F66;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    &_title {
+        margin-bottom: 16px;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #ffffff;
+
+        @include m.sp {
+            font-size: 28px;
+        }
+    }
+
+    &_text {
+        max-width: 520px;
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.8;
+        color: #ffffff;
+
+        @include m.sp {
+            max-width: none;
+            font-size: 14px;
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        padding-top: 48px;
+        gap: 16px;
+
+        @include m.sp {
+            flex-direction: column;
+        }
+    }
+}
+
+// ボタン共通
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &-primary,
+    &-outline {
+        padding: 25px 64px;
+        background-color: #A43C28;
+        color: #ffffff;
+        border: 1px solid #A43C28;
+    }
+
+    &-white {
+        padding: 18px 40px;
+        background-color: #ffffff;
+        color: #b23b2e;
+        border: 1px solid #ffffff;
+    }
+
+    &-line {
+        padding: 18px 40px;
+        background-color: #06c755;
+        color: #ffffff;
+        border: 1px solid #06c755;
+
+        img {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+    }
+
+    &-navy {
+        padding: 18px 40px;
+        background-color: #4E5E82;
+        color: #ffffff;
+        border: 1px solid #4E5E82;
+    }
+
+    &:hover {
+        opacity: 0.85;
+        transition: opacity 0.2s ease;
+    }
+}
+
+//fadein
+.fadein {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}

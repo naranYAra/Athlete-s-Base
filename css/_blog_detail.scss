@@ -1,0 +1,241 @@
+@use "mixin" as m;
+
+// ブログ詳細
+.blog-detail {
+    max-width: 800px;
+    padding-top: 140px; // headerがposition:fixedのため
+    padding-bottom: 70px;
+
+    @include m.sp {
+        padding-top: 100px;
+    }
+
+    &_meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    &_tag {
+        display: inline-block;
+        padding: 3px 16px;
+        border-radius: 20px;
+        background-color: #FBE4DE;
+        color: #A43C28;
+        font-size: 12px;
+    }
+
+    &_date {
+        font-size: 13px;
+        color: #57423E;
+    }
+
+    &_title {
+        margin-bottom: 32px;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: #1B1C1C;
+
+        @include m.sp {
+            font-size: 22px;
+        }
+    }
+
+    &_hero {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 40px;
+    }
+
+    &_body {
+        margin-bottom: 40px;
+    }
+
+    &_lead {
+        margin-bottom: 40px;
+        font-size: 15px;
+        line-height: 2;
+        color: #1B1C1C;
+    }
+
+    &_section {
+        margin-bottom: 40px;
+
+        &_title {
+            padding-left: 16px;
+            padding-block: 4px;
+            ;
+            margin-bottom: 16px;
+            border-left: 4px solid #A43C28;
+            font-size: 19px;
+            font-weight: 700;
+            color: #1B1C1C;
+            background-color: #F5F3F3;
+        }
+
+        &_text {
+            font-size: 14px;
+            line-height: 1.9;
+            color: #57423E;
+        }
+    }
+
+    &_list {
+        margin-top: 16px;
+        padding-left: 20px;
+        list-style: disc;
+
+        li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #57423E;
+        }
+    }
+
+    &_highlight {
+        margin-top: 24px;
+        padding: 24px;
+        background-color: #FBE4DE;
+        border-radius: 12px;
+
+        &_head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        &_icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        &_title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #A43C28;
+
+        }
+
+        &_text {
+            font-size: 13px;
+            line-height: 1.9;
+            color: #57423E;
+        }
+    }
+
+    &_share {
+        padding-block: 32px;
+        margin-bottom: 40px;
+        border-top: 1px solid #E5E1DF;
+        border-bottom: 1px solid #E5E1DF;
+        text-align: center;
+
+        &_label {
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #57423E;
+        }
+
+        &_buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        &_btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #F5F3F3;
+            border: none;
+            cursor: pointer;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                background-color: #E5E1DF;
+            }
+        }
+    }
+
+    &_related {
+        margin-bottom: 40px;
+
+        &_title {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B1C1C;
+        }
+
+        &_grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            @include m.sp {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &_card {
+            display: block;
+            color: inherit;
+
+            &_image {
+                width: 100%;
+                aspect-ratio: 16 / 10;
+                object-fit: cover;
+                border-radius: 12px;
+                margin-bottom: 12px;
+            }
+
+            &_tag {
+                display: inline-block;
+                margin-bottom: 6px;
+                font-size: 12px;
+                color: #A43C28;
+            }
+
+            &_title {
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.6;
+                color: #1B1C1C;
+            }
+
+            &:hover &_title {
+                color: #A43C28;
+            }
+        }
+    }
+
+    &_pagenav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 24px;
+        border-top: 1px solid #E5E1DF;
+
+        &_link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #57423E;
+
+            &:hover {
+                color: #A43C28;
+            }
+        }
+    }
+}

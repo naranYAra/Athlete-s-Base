@@ -1,0 +1,140 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+
+    &_inner {
+        padding-inline: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_logo {
+        font-size: 22px;
+        font-weight: 700;
+
+        a {
+            color: #A43C28;
+            text-decoration: none;
+        }
+    }
+
+    // ナビゲーション（画面左からスライドイン）
+    &_nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 260px;
+        height: 100vh;
+        padding: 60px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: 105;
+
+        &_close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            line-height: 1;
+            color: #57423E;
+            cursor: pointer;
+        }
+
+        &_list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-top: 20px;
+            list-style: none;
+
+            a {
+                font-size: 15px;
+                font-weight: 700;
+                color: #57423E;
+                text-decoration: none;
+
+                &:hover {
+                    color: #A43C28;
+                }
+            }
+        }
+
+        &_contact {
+            margin-top: auto;
+            padding-top: 24px;
+            border-top: 1px solid #ececec;
+            text-align: center;
+
+            &_label {
+                font-size: 16px;
+                color: #57423E;
+            }
+        }
+
+        &_tel {
+            margin-top: 4px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #A43C28;
+        }
+    }
+}
+
+// ハンバーガーボタン
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #A43C28;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+}
+
+// マスク
+.mask {
+    display: none;
+}
+
+// メニュー展開時
+.header.open {
+    .header_nav {
+        transform: translateX(0);
+    }
+
+    .mask {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 100;
+    }
+}
